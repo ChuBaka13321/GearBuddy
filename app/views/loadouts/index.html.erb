@@ -1,0 +1,24 @@
+<h1>Sample Loadouts, Upload Yours! Share what works for you!</h1>
+    <ul>
+        <% @loadouts.each do |b| %>
+            <li>
+                <strong> <%= b.name %> </strong> 
+            </li>
+            <li>
+              Chest Gear: <%= b.chestgear %>
+            </li>
+            <li>
+              Pouches: <%= b.pouch %>
+            </li>
+            <li>
+              Belts: <%= b.belt %>
+            </li>
+            <li>
+              Head Gear: <%= b.headgear %>
+            </li>
+            <li>
+              Foot Wear: <%= b.footwear %>
+            </li>
+
+        <% end %>
+    </ul>

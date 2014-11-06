@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+
+  root 'loadouts#index'
+
+
+  get 'loadouts/' => 'loadouts#index'
+
+  get 'loadouts/new' => 'loadouts#new'
+  
+  get 'loadouts/:id' => 'loadouts#show', as: :loadout
+
+
+
+
+
+  # post 'items/' => 'items#create'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
