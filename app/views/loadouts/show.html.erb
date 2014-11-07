@@ -1,0 +1,21 @@
+<h1> <%= @loadout.name %> </h1>
+<ul>
+            <li>
+              Chest Gear: <%= @loadout.chestgear %>
+            </li>
+            <li>
+              Pouches: <%= @loadout.pouch %>
+            </li>
+            <li>
+              Belts: <%= @loadout.belt %>
+            </li>
+            <li>
+              Head Gear: <%= @loadout.headgear %>
+            </li>
+            <li>
+              Foot Wear: <%= @loadout.footwear %>
+            </li>
+        </ul>
+    <%= link_to "Edit this loadout!", edit_loadout_path(@loadout) %>
+    <%= link_to "Delete this loadout!", :loadout, method: :delete, data: { confirm: 'Are you sure you want to delete it?' } %>
+    <%= link_to "Back to the list!", loadouts_path %>

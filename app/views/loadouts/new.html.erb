@@ -1,0 +1,16 @@
+<h1> Add Your Loadout! </h1>
+
+    <%= form_for @loadout do |f| %>
+    <strong>Please separate additional items with a comma for readability please!</strong><br>
+        Name for your loadout: <%= f.text_field :name %><br>
+        Chest Gear: <%= f.text_field :chestgear %><br>
+        Pouch(es): <%= f.text_field :pouch %><br>
+        Belt(s): <%= f.text_field :belt %><br>
+        Head Gear: <%= f.text_field :headgear %><br>
+        Footwear: <%= f.text_field :footwear %><br>
+
+        <%= f.submit "Add Loadout!" %>
+
+    <% end %>
+
+    <%= link_to "Back to the list!", loadouts_path %>

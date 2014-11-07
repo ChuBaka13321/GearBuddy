@@ -5,15 +5,19 @@ Rails.application.routes.draw do
 
   get 'loadouts/' => 'loadouts#index'
 
-  get 'loadouts/new' => 'loadouts#new'
+  get 'loadouts/new' => 'loadouts#new', as: :new_loadout
   
   get 'loadouts/:id' => 'loadouts#show', as: :loadout
 
+  post 'loadouts/' => 'loadouts#create'
 
+  get 'loadouts/:id/edit' => 'loadouts#edit'
 
+  patch 'loadouts/:id' => 'loadouts#update'
 
+  delete 'loadouts/:id' => 'loadouts#destroy'
 
-  # post 'items/' => 'items#create'
+  get 'loadouts/:id/edit' => 'loadouts#edit', as: :edit_loadout
 
 
 
