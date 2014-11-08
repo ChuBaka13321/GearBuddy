@@ -41,6 +41,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
 
+gem 'rails_12factor'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
