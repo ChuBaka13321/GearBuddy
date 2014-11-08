@@ -16,6 +16,6 @@
               Foot Wear: <%= @loadout.footwear %>
             </li>
         </ul>
-    <%= link_to "Edit this loadout!", edit_loadout_path(@loadout) %>
-    <%= link_to "Delete this loadout!", :loadout, method: :delete, data: { confirm: 'Are you sure you want to delete it?' } %>
+    <%= link_to "Edit this loadout!", edit_loadout_path(@loadout) %><br>
+    <%= link_to "Delete this loadout!", :loadout, method: :delete, data: { confirm: 'Are you sure you want to delete it?' } %><br>
     <%= link_to "Back to the list!", loadouts_path %>
