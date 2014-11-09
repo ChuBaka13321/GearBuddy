@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
 
   root 'loadouts#index'
-  # root 'users#index'
+  #root 'users#index'
 
 
   get 'loadouts/' => 'loadouts#index'
@@ -25,6 +25,12 @@ Rails.application.routes.draw do
   delete 'loadouts/:id' => 'loadouts#destroy'
 
   get 'loadouts/:id/edit' => 'loadouts#edit', as: :edit_loadout
+
+  # Photo routes
+  get 'photos/' => 'photos#index'
+  get 'photos/new' => 'photos#new', as: :new_photo
+  # get 'photos/:id' => 'photos#show', as: :photo
+  post 'photos' => 'photos#create'
 
 
 

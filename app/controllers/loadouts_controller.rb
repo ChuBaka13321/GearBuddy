@@ -2,18 +2,24 @@ class LoadoutsController < ApplicationController
 
   def index
     @loadouts = Loadout.all
+    @users = User.all
+    @photos = Photo.all
   end
 
   def show
     @loadout = Loadout.find(params[:id])
+    @users = User.all
+    
   end
 
   def new
     @loadout = Loadout.new
+    @photos = Photo.new
   end
 
   def create
-        @loadout = Loadout.new(params.require(:loadout).permit(:name, :chestgear, :pouch, :belt, :headgear, :footwear))
+        @loadout = current_user.loadouts.new(params.require(:loadout).permit(:name, :chestgear, :pouch, :belt, :headgear, :footwear))
+        #@loadout = Loadout.new(params.require(:loadout).permit(:name, :chestgear, :pouch, :belt, :headgear, :footwear))
         if @loadout.save
             redirect_to loadouts_path
         else
@@ -23,6 +29,7 @@ class LoadoutsController < ApplicationController
 
   def edit
       @loadout = Loadout.find(params[:id])
+      @photo = Photo.all
   end
 
   def update
@@ -38,6 +45,6 @@ class LoadoutsController < ApplicationController
         @loadout = Loadout.find(params[:id])
         @loadout.destroy
         redirect_to loadouts_path
-    end
+  end
 
 end

@@ -5,29 +5,24 @@
   <li><h3>Help out new enthusiasts get an idea as well as learn from others!</h3></li>
 <ul>
     <%= link_to "Start here and share loadout!", new_loadout_path(@loadout) %><br><br>
-        <% @loadouts.each do |b| %>
-                <strong> <%= b.name %> </strong> <br>
-                IMAGE HERE
-                <br>
+        <% @loadouts.each do |l| %>
+
+          <strong> <%= l.name %> </strong> <br>
             
 
-            <!-- <li>
-              Chest Gear: <%= b.chestgear %>
-            </li>
-            <li>
-              Pouches: <%= b.pouch %>
-            </li>
-            <li>
-              Belts: <%= b.belt %>
-            </li>
-            <li>
-              Head Gear: <%= b.headgear %>
-            </li>
-            <li>
-              Foot Wear: <%= b.footwear %>
-            </li> -->
-            <%= link_to "More details!", loadout_path(b) %>
-            <br><br><br>
+                  <div class="user_box">
 
+                    <% l.photos.each do |p| %>
+                      <%= image_tag p.image.url(:medium) %><br>
+                    <% end %>
+
+                  </div>
+              
+               
+
+
+            <br>
+            <%= link_to "More details!", loadout_path(l) %>
+            <br><br><br>
         <% end %>
     </ul>
