@@ -1,29 +1,40 @@
-<h1>Welcome to GearBuddy!</h1>
+<div class="page-header">
+  <h1>Welcome to GearBuddy! 
+    <small>
+      <ul>
+        <li><h3>Share and Upload Your Loadout!</h3></li> 
+        <li><h3>Tell the community what works for you!</h3></li>
+        <li><h3>Help new enthusiasts get an idea of how to setup their gear, as well as learn from others!</h3></li>
+      </ul>
+    </small>
+  </h1>
+</div>
+<!-- <h1>Welcome to GearBuddy!</h1>
 <ul>
   <li><h3>Share and Upload Your Loadout!</h3></li> 
   <li><h3>Tell the community what works for you!</h3></li>
   <li><h3>Help new enthusiasts get an idea of how to setup their gear, as well as learn from others!</h3></li>
-</ul>
-    <%= link_to "Start here and share a loadout!", new_loadout_path(@loadout) %><br><br>
-        
+</ul> -->
+    <div class="centered-text">
+      <h3><%= link_to "Start here and share a loadout!", new_loadout_path(@loadout) %></h3>
+    </div><br><br>
+         
         <% @loadouts.each do |l| %>
-
+          <div class="well well-lg centered-text">
           <strong> <%= l.name %> </strong> <br>
-            <div class="user_box">
-
-                  
+            <div class="user_box">                  
                     <% l.user.photos.each do |p| %>
-                      <%= image_tag p.image.url(:medium) %><br/>
+                      <%= image_tag p.image.url(:large) %><br/>
                     <% end %>
                   
-                </div>
-              
+                </div>            
             <br>
-
+          <h5><%= link_to "More details!", loadout_path(l) %></h5>
           <% if l.user == current_user %>
-            <strong><%= link_to "This is your loadout, add a new image!", new_photo_path(@photo) %></strong><br>
+            <h4><%= link_to "This is your loadout, add a new image!", new_photo_path(@photo) %></h4><br>
           <% end %>
-          <%= link_to "More details!", loadout_path(l) %>
           <br><br><br>
+           </div> 
       <% end %>
+    
 

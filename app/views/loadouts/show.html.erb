@@ -1,13 +1,17 @@
-<h1> <%= @loadout.name %> </h1>
-  <div class="user_box">
+<div class="panel panel-default centered-text">
+  <div class="panel-heading">
+    <h3 class="panel-title"><h1> <%= @loadout.name %> </h1></h3>
+  </div>
+  <div class="panel-body">
+    <div class="user_box">
                  
                     <% @loadout.user.photos.each do |p| %>
-                      <%= image_tag p.image.url(:medium) %><br/>
+                      <%= image_tag p.image.url(:large) %><br/>
                     <% end %>
                   
                 </div>
 
-  <ul>
+  <ul class="left-text">
       <li>
         Chest Gear: <%= @loadout.chestgear %>
       </li>
@@ -29,6 +33,9 @@
   <%= link_to "Delete this loadout!", :loadout, method: :delete, data: { confirm: 'Are you sure you want to delete it?' } %><br>
 <% end %>
 <%= link_to "Back to the list!", loadouts_path %>
+  </div>
+</div>
+
 
 
 

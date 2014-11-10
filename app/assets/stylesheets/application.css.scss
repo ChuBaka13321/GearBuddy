@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+/*@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";*/
+@import 'bootstrap';
+
+.centered-text {
+    text-align:center;
+    margin:0 auto;
+    width: 600px;
+}    
+.left-text {
+  text-align:left;
+}
+body {
+   background:black !important;
+   margin:0 auto;
+}
+.page-header {
+  color:white !important;
+}
+
+.logSign {
+  text-align:center;
+  color:gray;
+  margin:0 auto;
+}
+#user_header {
+  color:white !important;
+}
