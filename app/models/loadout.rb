@@ -3,7 +3,8 @@ class Loadout
 
   has_many :photos
   belongs_to :user
-  # accepts_nested_attributes_for :photos
+  
+  #accepts_nested_attributes_for :photos
 
   field :name, type: String
   field :chestgear, type: String
@@ -12,5 +13,5 @@ class Loadout
   field :headgear, type: String
   field :footwear, type: String
 
-  
+
 end

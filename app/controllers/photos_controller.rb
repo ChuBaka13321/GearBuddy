@@ -3,10 +3,12 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    @loadout = Loadout.all
   end
-  
+
   def new
     @photo = Photo.new
+
   end
   
   def create

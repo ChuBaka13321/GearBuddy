@@ -9,7 +9,6 @@ class LoadoutsController < ApplicationController
   def show
     @loadout = Loadout.find(params[:id])
     @users = User.all
-    
   end
 
   def new
@@ -30,6 +29,7 @@ class LoadoutsController < ApplicationController
   def edit
       @loadout = Loadout.find(params[:id])
       @photo = Photo.all
+
   end
 
   def update

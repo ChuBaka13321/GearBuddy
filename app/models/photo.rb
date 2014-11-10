@@ -5,7 +5,7 @@ class Photo
     field :date, type: DateTime
 
     belongs_to :user
-    # belongs_to :loadout
+    belongs_to :loadout
     has_mongoid_attached_file :image, 
    :styles => {
       :original => ['1920x1680>', :jpg],

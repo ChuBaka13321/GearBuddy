@@ -1,4 +1,12 @@
 <h1> <%= @loadout.name %> </h1>
+  <div class="user_box">
+                 
+                    <% @loadout.user.photos.each do |p| %>
+                      <%= image_tag p.image.url(:medium) %><br/>
+                    <% end %>
+                  
+                </div>
+
   <ul>
       <li>
         Chest Gear: <%= @loadout.chestgear %>
@@ -16,6 +24,12 @@
         Foot Wear: <%= @loadout.footwear %>
       </li>
   </ul>
-<%= link_to "Edit this loadout!", edit_loadout_path(@loadout) %><br>
-<%= link_to "Delete this loadout!", :loadout, method: :delete, data: { confirm: 'Are you sure you want to delete it?' } %><br>
+<% if @loadout.user == current_user %>
+  <%= link_to "Edit this loadout!", edit_loadout_path(@loadout), :method=>:get %><br>
+  <%= link_to "Delete this loadout!", :loadout, method: :delete, data: { confirm: 'Are you sure you want to delete it?' } %><br>
+<% end %>
 <%= link_to "Back to the list!", loadouts_path %>
+
+
+
+

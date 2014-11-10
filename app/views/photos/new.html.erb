@@ -1,4 +1,6 @@
+<h1> Add a photo of your loadout!</h1>
 <%= form_for @photo do |f| %>
   <%= f.file_field :image %>
   <%= f.submit %>
 <% end %>
+<%= link_to "Go back to the loadouts page.", loadouts_path %>
