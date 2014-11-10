@@ -10,12 +10,12 @@
 
           <strong> <%= l.name %> </strong> <br>
             <div class="user_box">
-              
-                  <% if l.user.photos %>
+
+                  
                     <% l.user.photos.each do |p| %>
                       <%= image_tag p.image.url(:medium) %><br/>
                     <% end %>
-                  <% end %>
+                  
                 </div>
               
             <br>
